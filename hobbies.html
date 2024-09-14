@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Trinidad WebPage - Page 2</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="styles.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
+body, html {
+  height: 100%;
+}
+
+/* Create a Parallax Effect */
+.bgimg-1, .bgimg-2, .bgimg-3 {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* First image (Logo. Full height) */
+.bgimg-1 {
+  background-image: url('Photos/Couple1.png');
+  min-height: 100%;
+}
+
+/* Turn off parallax scrolling for tablets and phones */
+@media only screen and (max-device-width: 1600px) {
+  .bgimg-1, .bgimg-2, .bgimg-3 {
+    background-attachment: scroll;
+    min-height: 400px;
+  }
+}
+
+div.scroll-container {
+  background-color: #333;
+  overflow: auto;
+  white-space: nowrap;
+  padding: 10px;
+}
+
+div.scroll-container img {
+  padding: 10px;
+}
+
+/* Style for video containers */
+.video-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.video-container iframe {
+  width: 100%;
+  margin-bottom: 20px;
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar" id="myNavbar">
+    <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <a href="hobbies.html" class="w3-bar-item w3-button">HOME</a> <!-- Changed link to point to index.html -->
+    <a href="#about" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> GALLERY</a>
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-red">
+      <i class="fa fa-search"></i>
+    </a>
+  </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
+    <a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction()">ABOUT</a>
+  </div>
+</div>
+
+<!-- First Parallax Image with Logo Text -->
+<div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
+  <div class="w3-display-middle" style="white-space:nowrap;">
+    <img src="Photos/Flower1.png" class="" alt="Dragon balls" width="500" height="500">
+  </div>
+</div>
+
+<div class="w3-row-padding w3-center">
+  <div class="w3-col m3">
+    <img src="Photos/PC_1.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Pc Setup 1">
+  </div>
+
+  <div class="w3-col m3">
+    <img src="Photos/PC_2.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Pc Setup 2">
+  </div>
+
+  <div class="w3-col m3">
+    <img src="Photos/PC_3.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Pc Setup 3">
+  </div>
+
+  <div class="w3-col m3">
+    <img src="Photos/PC_4.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Pc Setup 3">
+  </div>
+</div>
+
+<div class="w3-row-padding w3-center w3-section">
+  <div class="w3-col m3">
+    <img src="Photos/Luffy_1.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="luffy">
+  </div>
+
+  <div class="w3-col m3">
+    <img src="Photos/Luffy_2.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Luffy 2">
+  </div>
+
+  <div class="w3-col m3">
+    <img src="Photos/Goku_1.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="goku 2">
+  </div>
+
+  <div class="w3-col m3">
+    <img src="Photos/Goku_2.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="goku">
+  </div>
+</div>
+
+<!-- Modal for full size images on click-->
+<div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
+  <span class="w3-button w3-large w3-black w3-display-topright" title="Close Modal Image"><i class="fa fa-remove"></i></span>
+  <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+    <img id="img01" class="w3-image">
+    <p id="caption" class="w3-opacity w3-large"></p>
+  </div>
+</div>
+
+<!-- Videos Section -->
+<div class="w3-content w3-container w3-padding-64" id="videos">
+  <h3 class="w3-center">VIDEOS</h3>
+  
+  <!-- Example Video 1 -->
+  <div class="w3-row">
+    <div class="w3-col m6 w3-center w3-padding-large">
+      <!-- Replace this with your local video file path -->
+      <video width="100%" controls autoplay loop>
+        <source src="Videos/movie1.mp4" type="video/mp4">
+      </video>
+    </div>
+  
+    <!-- Example Video 2 -->
+    <div class="w3-col m6 w3-center w3-padding-large">
+      <!-- Replace this with your local video file path -->
+      <video width="100%" controls autoplay>
+        <source src="Videos/movie2.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+</div>
+
+  <div class="cat-container">
+  <div class="cat">
+	<div class="ear ear--left"></div>
+	<div class="ear ear--right"></div>
+	<div class="face">
+		<div class="eye eye--left">
+			<div class="eye-pupil"></div>
+		</div>
+		<div class="eye eye--right">
+			<div class="eye-pupil"></div>
+		</div>
+		<div class="muzzle"></div>
+	</div>
+</div>
+  </div>
+
+  <!-- Navigation links to first and second pages -->
+<div class="w3-container w3-padding-64">
+    <div class="w3-center">
+      <a href="NewTrinidad_Webpage.html" class="w3-button w3-light-grey"> 1 </a>
+      <a href="page2.html" class="w3-button w3-light-grey"> 2 </a>
+    </div>
+  </div>
+
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding-64 w3-opacity w3-hover-opacity-off">
+  <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+  <div class="w3-xlarge w3-section">
+  </div>
+  <p>@ 2024 Joaquin Trinidad, Rest in Peace Akira Toriyama Fly high</p>
+</footer>
+ 
+<script>
+// Change style of navbar on scroll
+window.onscroll = function() {myFunction()};
+function myFunction() {
+    var navbar = document.getElementById("myNavbar");
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white";
+    } else {
+        navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
+    }
+}
+
+// Used to toggle the menu on small screens when clicking on the menu button
+function toggleFunction() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else {
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+</script>
+
+</body>
+</html>
