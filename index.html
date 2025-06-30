@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Coverflow Carousel</title>
+  <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+  <header class="portfolio-header">
+    <h1>PORTFOLIO</h1>
+  </header>
+
+  <!-- navbar -->
+  <nav class="full-navbar">
+    <a href="index.html" class="nav-link current">Home</a>
+    <a href="page2.html" class="nav-link">About</a>
+    <a href="page3.html" class="nav-link">Contact</a>
+  </nav>
+
+  <main class="coverflow-shell">
+    <button class="cf-btn left" onclick="prev()">&#8592;</button>
+    <div class="coverflow">
+      <div class="slide">
+        <img src="https://picsum.photos/id/1011/800/450" alt="">
+        <div class="desc-box">Description goes here</div>
+      </div>
+      <div class="slide">
+        <img src="https://picsum.photos/id/1015/800/450" alt="">
+        <div class="desc-box">Description goes here</div>
+      </div>
+      <div class="slide">
+        <img src="https://picsum.photos/id/1021/800/450" alt="">
+        <div class="desc-box">Description goes here</div>
+      </div>
+      <div class="slide">
+        <img src="https://picsum.photos/id/1031/800/450" alt="">
+        <div class="desc-box">Description goes here</div>
+      </div>
+      <div class="slide">
+        <img src="https://picsum.photos/id/1041/800/450" alt="">
+        <div class="desc-box">Description goes here</div>
+      </div>
+    </div>
+    <button class="cf-btn right" onclick="next()">&#8594;</button>
+  </main>
+
+  <script src="scripts/scripts.js"></script>
+</body>
+</html>
